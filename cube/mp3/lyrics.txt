@@ -1,0 +1,53 @@
+const lyricsContainer = document.getElementById('lyrics-container');
+const lyrics = document.getElementById('lyrics');
+
+  // Lyrics for your audio
+  const audioLyrics = [
+    "Verse 1: This is the first line of your lyrics.",
+    "Chorus: This is the chorus of your song.",
+    "Nante98 - Paradise.",
+    `Zah rery tsy afak miteny a oe za rery`,
+    `Zah miteny ah oe za rery`,
+    `Zah rery tsy afak miteny ah oe za rery`,
+    `Zah rery tsy afaery`,
+    `Zah rery tsy afak miteny ah oe za rery`,
+    `Zah y tsy afak miteny ah oe za rery`,
+    `Ziteny ah oe za rery`,
+    `Zah rery tsy afak miteny ah oe za rery`,
+    `Zah rer ah oe za rery`,
+    `Zah rery tsy afak miteah oe za rery`,
+    // Add more lines as needed
+  ];
+
+  // Index to keep track of the current lyric
+  let currentLyricIndex = 0;
+
+  //play
+  
+   // Update lyrics when the audio plays
+   paradiseAudio.addEventListener('timeupdate', updateLyrics);
+
+   //
+
+   
+function updateLyrics() {
+  // Calculate the current time in seconds
+  const currentTime = Math.floor(paradiseAudio.currentTime);
+
+  // Check if the current time corresponds to a new lyric
+  if (audioLyrics[currentLyricIndex] && currentTime >= currentLyricIndex) {
+    lyrics.textContent = audioLyrics[currentLyricIndex];
+    currentLyricIndex++;
+  }
+}
+
+//STOP
+
+      // Reset the lyrics when the audio stops
+    lyrics.textContent = "This is where your lyrics will appear.";
+    currentLyricIndex = 0;
+
+    // Remove the event listener to avoid updating lyrics when audio is not playing
+    paradiseAudio.removeEventListener('timeupdate', updateLyrics);
+
+    //

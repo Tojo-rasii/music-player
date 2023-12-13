@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cube Animation</title>
+  <link rel="stylesheet" href="../cube/styles.css">
+</head>
+
+<body>
+
+  <!-- <main> -->
+  <div class="cube-container" id="cube">
+    <div class="cube-face front">Front</div>
+    <div class="cube-face back">Back</div>
+    <div class="cube-face right">Right</div>
+    <div class="cube-face left">Left</div>
+    <div class="cube-face top">Top</div>
+    <div class="cube-face bottom">Bottom</div>
+  </div>
+
+  <div class="play-container">
+    <section>
+      <article>
+        <p>Nante98&nbsp;&nbsp;</p>
+        <p>Paradise</p>
+      </article>
+    </section>
+    <section>
+      <article>
+        <span><ion-icon name="sync-outline" id="repeat" class="icon fs-1"></ion-icon></span>
+        <span><ion-icon name="play-skip-back-circle-outline" class="icon"></ion-icon></span>
+      </article>
+      <article>
+        <ion-icon name="play-circle-outline" id="play" onclick="play()"></ion-icon>
+        <ion-icon name="pause-circle-outline" id="stop" onclick="stop()"></ion-icon>
+      </article>
+      <article>
+        <span><ion-icon name="play-skip-forward-circle-outline" class="icon"></ion-icon></span>
+        <span><ion-icon name="heart-outline" id="heart" class="icon fs-1"></ion-icon></span>
+        <!-- <span><ion-icon name="volume-mute-outline" class="icon"></ion-icon></span> -->
+      </article>
+      <!-- <article>
+        <ion-icon name="volume-high"></ion-icon>
+        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5">
+        <audio id="audio-controls" src="../cube/mp3/paradise.mp3" controls></audio>
+      </article> -->
+      <audio id="paradiseAudio" src="../cube/mp3/paradise.mp3" preload="auto"></audio>
+
+      <!-- Time slider -->
+      <input type="range" id="time-slider" min="0" max="100" step="0.01" value="0" oninput="seekAudio()">
+    </section>
+  </div>
+  <!-- </main> -->
+  <div class="pop-text">
+    <article>
+      <span>running</span>
+      <span>
+        <p>&nbsp;.</p>
+        <p>.</p>
+        <p>.</p>
+      </span>
+    </article>
+  </div>
+  <div class="pop-paused">
+    <article>
+      <span>paused</span>
+      <span>
+        <p>&nbsp;.</p>
+        <p>.</p>
+        <p>.</p>
+      </span>
+    </article>
+  </div>
+
+  <!-- Lyrics container -->
+  <div id="lyrics-container" style="display: none;">
+    <p id="lyrics">This is where your lyrics will appear.</p>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script src="../cube/script.js"></script>
+</body>
+
+</html>

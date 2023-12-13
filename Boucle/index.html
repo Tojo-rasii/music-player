@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="stylesheet" href="../Boucle/styles.css">
+</head>
+<body>
+    <header>
+        <section>
+            <nav>
+                <article>
+                    <h2>LOGO</h2>
+                </article>
+                <article>
+                    <p>Home</p>
+                    <p>About</p>
+                    <p>Contact</p>
+                </article>
+                <article>
+                    <button>Connexion</button>
+                </article>
+            </nav>
+        </section>
+        <div id="articleContainer"></div>
+    </header>
+    <script>
+        // Liste d'articles
+        const articles = [
+            {
+                title: "Title article 1",
+                content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus nesciunt itaque eligendi optio consectetur corrupti porro asperiores eum ab alias!"
+            },
+            {
+                title: "Title article 2",
+                content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus nesciunt itaque eligendi optio consectetur corrupti porro asperiores eum ab alias!"
+            },
+            {
+                title: "Title article 2",
+                content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus nesciunt itaque eligendi optio consectetur corrupti porro asperiores eum ab alias!"
+            },
+            {
+                title: "Title article 2",
+                content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus nesciunt itaque eligendi optio consectetur corrupti porro asperiores eum ab alias!"
+            },
+            
+            // Ajoutez autant d'articles que nécessaire
+        ];
+    
+        // Sélectionnez le conteneur d'articles
+        const articleContainer = document.getElementById('articleContainer');
+    
+        // Utilisez la méthode map pour générer du HTML pour chaque article
+        const articlesHTML = articles.map(article => `
+            <div>
+                <article>
+                    <h2>${article.title}</h2>
+                    <p>${article.content}</p>
+                </article>
+            </div>
+        `).join('');
+    
+        // Ajoutez le HTML généré dans le conteneur d'articles
+        articleContainer.innerHTML = articlesHTML;
+    </script>
+    
+</body>
+</html>

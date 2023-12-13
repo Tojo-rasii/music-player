@@ -1,0 +1,15 @@
+// Le nombre de fois que vous souhaitez répéter l'article
+    // const nombreRepetitions = 5;
+
+    // Boucle pour répéter l'article
+    // for (let i = 0; i < nombreRepetitions; i++) {
+    //     document.write(`
+    //         <div>
+    //             <article>
+    //                 <h2>Title article</h2>
+    //                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus nesciunt itaque eligendi
+    //                 optio consectetur corrupti porro asperiores eum ab alias!</p>
+    //             </article>
+    //         </div> n/
+    //     `);
+    // }

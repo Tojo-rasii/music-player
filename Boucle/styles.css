@@ -1,0 +1,141 @@
+*, ::after, ::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-bottom: 50em;
+}
+
+section{
+    /* content: ""; */
+    position: fixed;
+    /* inset: 0;  */
+    width: 100%;
+    height: min-content;
+    background: rgb(88, 143, 0);
+    /* animation: scale 3s linear;
+    animation-timeline: scroll(root);
+    transform-origin: 0 50%; */
+    color: #fff;
+    padding-top: 0.3em;
+    padding-bottom: 0.5em;
+    margin-top: -3.5em;
+}
+
+section::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 0.5em;
+    background: red;
+    animation: scale 3s linear;
+    animation-timeline: scroll(root);
+    transform-origin: 0 50%;
+    margin-top: 4em;
+}
+
+@keyframes scale {
+    0%{
+        transform: scalex(0);
+        /* display: block; */
+    }
+    /* 20%{
+        transform: scalex(1);
+        display: none;
+    } */
+    50%{
+        transform: scalex(0.5);
+        /* display: none; */
+    }
+    100%{
+        transform: scalex(1);
+        /* display: none; */
+    }
+}
+section nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5em;
+}
+section nav article button{
+    padding: 0.8em;
+    padding-inline: 1.5em;
+    border-radius: 0.5em;
+    border: none;
+    outline: 2px solid #fff;
+    background: silver;
+}
+section nav article button:active{
+    scale: 0.9;
+}
+section nav article:nth-child(2){
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    text-transform: uppercase;
+}
+div{
+    margin: 3.5em 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.2em;
+    overflow: hidden;
+    z-index: -20;
+}
+div article{
+    width: 40vw;
+    height: 25vh;
+    word-break: keep-all;
+    background: silver;
+    outline: 1px solid rgb(128, 128, 128);
+    animation: translate 3s linear;
+    animation-timeline: scroll(root);
+}
+
+@keyframes translate {
+    0%{
+        /* clip-path: circle(1); */
+        /* display: block; */
+        opacity: 1;
+
+    }
+    /* 5%{
+        margin: -1em;
+    }
+    10%{
+        margin: -2em;
+    }
+    15%{
+        margin: -3em;
+    }
+    85%{
+        margin: 3em;
+    }
+    90%{
+        margin: 2em;
+    }
+    95%{
+        margin: 1em;
+    } */
+    50%{
+        /* margin: 3em;
+        display: none; */
+        opacity: 0;
+        
+    }
+    100%{
+        /* clip-path: circle(0); */
+        /* display: none; */
+        opacity: 0;
+        margin: 3em;
+    }
+}
+
+div article h2{
+    padding-top: 1em;
+}
