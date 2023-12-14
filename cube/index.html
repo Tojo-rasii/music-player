@@ -30,14 +30,14 @@
     <section>
       <article>
         <span><ion-icon name="sync-outline" id="repeat" class="icon fs-1"></ion-icon></span>
-        <span><ion-icon name="play-skip-back-circle-outline" class="icon"></ion-icon></span>
+        <span><ion-icon name="play-skip-back-circle-outline" id="Back" class="icon"></ion-icon></span>
       </article>
       <article>
         <ion-icon name="play-circle-outline" id="play" onclick="play()"></ion-icon>
         <ion-icon name="pause-circle-outline" id="stop" onclick="stop()"></ion-icon>
       </article>
       <article>
-        <span><ion-icon name="play-skip-forward-circle-outline" class="icon"></ion-icon></span>
+        <span><ion-icon name="play-skip-forward-circle-outline" id="Next" class="icon"></ion-icon></span>
         <span><ion-icon name="heart-outline" id="heart" class="icon fs-1"></ion-icon></span>
         <!-- <span><ion-icon name="volume-mute-outline" class="icon"></ion-icon></span> -->
       </article>
@@ -78,6 +78,158 @@
   <div id="lyrics-container" style="display: none;">
     <p id="lyrics">This is where your lyrics will appear.</p>
   </div>
+
+  <!-- ASIDE BAR ADD LIST-->
+  <aside class="asideAdd">
+    <section>
+      <article>
+        <ion-icon name="add-circle-outline" id="i-add"></ion-icon>
+        <p>Add song</p>
+      </article>
+    </section>
+    <section>
+      <article>
+        <span>
+          <p>Nante98 - Paradise</p>
+        </span>
+        <span>
+          <p><ion-icon name="more"></ion-icon></p>
+        </span>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+    </section>
+  </aside>
+
+  <!-- ASIDE BAR FAVORIS -->
+  <aside class="asideFavoris">
+    <section>
+      <article>
+        <ion-icon name="heart" id="i-favoris"></ion-icon>
+        <p>Favoris</p>
+      </article>
+      <article>
+        <ion-icon name="musical-notes" id="i-favoris"></ion-icon>
+        <p>Lyrics</p>
+      </article>
+      <article>
+        <ion-icon name="cog" id="i-favoris"></ion-icon>
+        <p>Parametre</p>
+      </article>
+    </section>
+
+    <!-- FAVORIS -->
+    <section style="display: none;">
+      <article>
+        <span>
+          <p>Nante98 - Paradise</p>
+        </span>
+        <span>
+          <p><ion-icon name="more"></ion-icon></p>
+        </span>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+      <article>
+        <p>Nante98 - Farany</p>
+      </article>
+    </section>
+
+    <!-- LYRICS -->
+    <section style="display: block;text-align: center;">
+      <article style="padding-top: 5em;">
+        <span>
+          <p>Ajouter le lyrics</p>
+        </span>
+        <span>
+          <p><ion-icon name="more"></ion-icon></p>
+        </span>
+      </article>
+      <article>
+        <p>on a pas pu trouver le lyrics de ce song</p>
+      </article>
+    </section>
+
+    <!-- PARAMETRE -->
+    <section style="display: block;text-align: left; padding-inline: 0.5em;">
+      <article>
+        <p>SYSTEME</p>
+          <label for="darkMode" style="display: flex;align-items: center;justify-content: space-between;">
+            <p>Dark-mode</p>
+            <input type="checkbox" name="" id="darkMode">
+          </label>
+      </article>
+      <article>
+        <p>AUTRES</p>
+        <p>A propos du site</p>
+        <p>Contact</p>
+      </article>
+    </section>
+
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <main>
+      <ion-icon name="logo-facebook" class="i-footer"></ion-icon>
+      <ion-icon name="logo-linkedin" class="i-footer"></ion-icon>
+      <ion-icon name="logo-github" class="i-footer"></ion-icon>
+      <ion-icon name="logo-google" class="i-footer"></ion-icon>
+    </main>
+  </footer>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script src="../cube/script.js"></script>

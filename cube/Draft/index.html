@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #musicList,
+    #articleList {
+      list-style: none;
+      padding: 0;
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+      display: none; /* Initially hide the music list */
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Music Player</h1>
+
+  <h2>Music List</h2>
+  <ul id="musicList"></ul>
+
+  <h2>Article List</h2>
+  <ul id="articleList"></ul>
+
+  <button onclick="addMusic()">Add Music</button>
+
+  <script>
+    // Sample initial music list
+    const initialMusicList = [
+      { title: 'Song 1', src: 'song1.mp3' },
+      { title: 'Song 2', src: 'song2.mp3' },
+    ];
+
+    // Function to create audio elements and populate the music list
+    function createAudioElement(title, src) {
+      const audio = document.createElement('audio');
+      audio.controls = true;
+      audio.src = src;
+
+      const listItem = document.createElement('li');
+      listItem.textContent = title;
+      listItem.appendChild(audio);
+
+      document.getElementById('musicList').appendChild(listItem);
+
+      // Add click event to play the associated song when clicking on the article
+      listItem.addEventListener('click', () => {
+        audio.play();
+      });
+    }
+
+    // Function to add more music to the list
+    function addMusic() {
+      const title = prompt('Enter the title of the song:');
+      const src = prompt('Enter the URL or path of the audio file:');
+
+      if (title && src) {
+        createAudioElement(title, src);
+        createArticleElement(title); // Add corresponding article to the list
+        createArticleElement(src); // Add corresponding article to the list
+
+        // Make the music list visible when music is added
+        document.getElementById('musicList').style.display = 'block';
+      } else {
+        alert('Please provide valid title and source for the audio file.');
+      }
+    }
+
+    // Function to create article elements and populate the article list
+    function createArticleElement(title) {
+      const listItem = document.createElement('li');
+      listItem.textContent = `Article about ${title}`;
+
+      document.getElementById('articleList').appendChild(listItem);
+
+      // Add click event to play the associated song when clicking on the article
+      listItem.addEventListener('click', () => {
+        const audioElement = document.querySelector(`#musicList li:contains("${title}") audio`);
+        if (audioElement) {
+          audioElement.play();
+        }
+      });
+    }
+
+    // Populate initial music list
+    initialMusicList.forEach(({ title, src }) => {
+      createAudioElement(title, src);
+      createArticleElement(title);
+    });
+
+    // Polyfill for :contains selector
+    // This selector is not natively supported in modern browsers
+    // You can use a library like jQuery or implement a simple polyfill
+    if (typeof jQuery === 'undefined') {
+      HTMLElement.prototype.containsText = function (text) {
+        return this.innerText.includes(text);
+      };
+    }
+
+    // Add polyfilled :contains selector to NodeList
+    NodeList.prototype.containsText = function (text) {
+      for (let i = 0; i < this.length; i++) {
+        if (this[i].containsText(text)) {
+          return true;
+        }
+      }
+      return false;
+    };
+  </script>
+
+</body>
+</html>

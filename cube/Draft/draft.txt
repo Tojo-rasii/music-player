@@ -1,0 +1,162 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #musicList,
+    #articleList {
+      list-style: none;
+      padding: 0;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Music Player</h1>
+
+  <h2>Music List</h2>
+  <ul id="musicList"></ul>
+
+  <h2>Article List</h2>
+  <ul id="articleList"></ul>
+
+  <button onclick="addMusic()">Add Music</button>
+
+  <script>
+    // Sample initial music list
+    const initialMusicList = [
+      { title: 'Song 1', src: 'song1.mp3' },
+      { title: 'Song 2', src: 'song2.mp3' },
+    ];
+
+    // Function to create audio elements and populate the music list
+    function createAudioElement(title, src) {
+      const audio = document.createElement('audio');
+      audio.controls = true;
+      audio.src = src;
+
+      const listItem = document.createElement('li');
+      listItem.textContent = title;
+      listItem.appendChild(audio);
+
+      document.getElementById('musicList').appendChild(listItem);
+    }
+
+    // Function to add more music to the list
+    function addMusic() {
+      const title = prompt('Enter the title of the song:');
+      const src = prompt('Enter the URL or path of the audio file:');
+
+      if (title && src) {
+        createAudioElement(title, src);
+        createArticleElement(title); // Add corresponding article to the list
+      } else {
+        alert('Please provide valid title and source for the audio file.');
+      }
+    }
+
+    // Function to create article elements and populate the article list
+    function createArticleElement(title) {
+      const listItem = document.createElement('li');
+      listItem.textContent = `Article about ${title}`;
+
+      document.getElementById('articleList').appendChild(listItem);
+    }
+
+    // Populate initial music list
+    initialMusicList.forEach(({ title, src }) => {
+      createAudioElement(title, src);
+      createArticleElement(title);
+    });
+  </script>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #musicList {
+      list-style: none;
+      padding: 0;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Music Player</h1>
+
+  <ul id="musicList"></ul>
+
+  <button onclick="addMusic()">Add Music</button>
+
+  <script>
+    // Sample initial music list
+    const initialMusicList = [
+      { title: 'Song 1', src: 'song1.mp3' },
+      { title: 'Song 2', src: 'song2.mp3' },
+    ];
+
+    // Function to create audio elements and populate the music list
+    function createAudioElement(title, src) {
+      const audio = document.createElement('audio');
+      audio.controls = true;
+      audio.src = src;
+
+      const listItem = document.createElement('li');
+      listItem.textContent = title;
+      listItem.appendChild(audio);
+
+      document.getElementById('musicList').appendChild(listItem);
+    }
+
+    // Function to add more music to the list
+    function addMusic() {
+      const title = prompt('Enter the title of the song:');
+      const src = prompt('Enter the URL or path of the audio file:');
+
+      if (title && src) {
+        createAudioElement(title, src);
+      } else {
+        alert('Please provide valid title and source for the audio file.');
+      }
+    }
+
+    // Populate initial music list
+    initialMusicList.forEach(({ title, src }) => createAudioElement(title, src));
+  </script>
+
+</body>
+</html> -->
+

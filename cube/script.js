@@ -131,6 +131,75 @@ const loadingPlay = document.querySelector(".play-container section");
     playButton.disabled = false;
 }
 
+// BUTTON AUDIO
+const nextButton = document.getElementById("Next");
+const backButton = document.getElementById("Back");
+
+//oneClick
+nextButton.addEventListener('click', nextAudio);
+backButton.addEventListener('click', backAudio);
+
+function backAudio(){
+  alert("BACK");
+  //  paradiseAudio.currentTime = 0;
+}
+function nextAudio(){
+  alert("NEXT");
+  //  paradiseAudio.currentTime = 200;
+}
+
+// REPEAT IT
+const repeatButton = document.getElementById("repeat");
+let isRepeatToggle = false;
+
+repeatButton.addEventListener('click', repeatIt);
+
+function repeatIt(){
+  // alert("REPEAT IT");
+
+  if(isRepeatToggle){
+    repeatButton.style.color = "#646464";
+ }
+ else{
+    repeatButton.style.color = "aqua";
+ //  paradiseAudio.currentTime = 0;
+}
+isRepeatToggle = !isRepeatToggle;
+
+}
+
+// lOVE IT
+const heartButton = document.getElementById("heart");
+let isHeartToggle = false;
+
+heartButton.addEventListener('click', loveIt);
+
+function loveIt(){
+  // alert("I adore");
+
+  if(isHeartToggle){
+     heartButton.style.color = "#646464";
+  }
+  else{
+     heartButton.style.color = "aqua";
+  //  paradiseAudio.currentTime = 0;
+}
+ isHeartToggle = !isHeartToggle;
+}
+
+//double click
+nextButton.addEventListener('dblclick', nextSong);
+backButton.addEventListener('dblclick', backSong);
+
+function backSong(){
+  // alert("redn dbhhdouble");
+   paradiseAudio.currentTime = 0;
+}
+function nextSong(){
+  // alert("redn dbhhdouble");
+   paradiseAudio.currentTime = 200;
+}
+
 // Function to speak a message using Web Speech API
 function speakMessage(message) {
   if ('speechSynthesis' in window) {
